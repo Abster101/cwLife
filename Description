@@ -1,0 +1,20 @@
+Background
+COSC420 Programming Project Game of Life (Sequential)
+Submit your solution through Blackboard
+Conway's Game of Life was never described in a paper by John Conway, rather it was raised as an interesting example in Martin Gardner's Mathematical Games column in Scientific American1. It has been a popular topic for computer scientists and others, sparking an entire field of study – cellular automata. In fact, it is said that more computing time has been spent on the Game of Life than on any other problem in computer science. There are many “reprints” of the article available online.2
+The game is played on a rectangular grid of squares. The rules of the game are very well described in the original Gardner article.
+Conway's genetic laws are delightfully simple. First note that each cell of the checkerboard (assumed to be an infinite plane) has eight neighboring cells, four adjacent orthogonally, four adjacent diagonally. The rules are:
+1. Survivals. Every counter with two or three neighboring counters survives for the next generation.
+2. Deaths. Each counter with four or more neighbors dies (is removed) from overpopulation. Every counter with one neighbor or none dies from isolation.
+3. Births. Each empty cell adjacent to exactly three neighbors – no more, no fewer – is a birth cell. A counter is placed on it at the next move.
+It is important to understand that all births and deaths occur simultaneously. Program Design
+Your implementation of the game should be able to deal with a game board of arbitrary, but fixed size. Your game board will not need to wrap around. Cells that are not on the board may be considered as being empty, as in the original specification.
+You should read the initial state of the board from a file specified in the command line. This will allow you to read different files for testing purposes. The file should specify first the number of generations, then the number of columns in the board and the number of rows. The initial board will then be read in. Use a period (.) to represent an empty cell and an asterisk (*) to represent an occupied cell. You may also feel it convenient to be able to write the file in a more compact format. In this format the numbers would be written in a binary format and the board represented by a single bit for each cell – a one representing an occupied cells and a zero representing an unoccupied cell.
+You may find it useful to have two copies of the board for the current and the next generation.
+You may wish to study a number of standard patterns (such as the glider, traffic lights and glider cannon) to demonstrate that your program correctly implements the rules on a small board. Indeed, establishing a base-line or (golden) implementation is part of the purpose of this project.
+1 The fantastic combinations of John Conway's new solitaire game “life”, Martin Gardner, Scientific American 223 (October 1970): 120-123.
+2 http://ddi.cs.uni-potsdam.de/HyFISCH/Produzieren/lis_projekt/proj_gamelife/ConwayScientificAmerican.htm
+￼
+In addition to correctness, you will need to consider the some additional factors. Your implementation needs to be efficient for a single core processor. In addition, you need to consider the future projects which will be based on this implementation but will be parallelised in various ways.
+You should provide an Eclipse project with appropriate “Run” configurations and test data for your program.
+You should use Java to implement your solution. You should restrict yourself to static methods of a single class. If you choose to use inner subclasses, then these should have only public instance variables. You should use only single dimensional array. You should avoid using any of the library classes with the exception of java.util.Scanner. This will make it easier to make the transition to C.
