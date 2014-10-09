@@ -66,7 +66,7 @@ public class cwLife {
  // In other words:
  // Live cells: If live neighbours == 2 or 3, birth. Else, kill.
  // Dead cells: If live neighbours == 3, birth. Else, kill.
-
+//TODO: The rules of the game are going to be written below
     	//READ ME
 		try {
 			java.io.FileReader fr = new java.io.FileReader(file);
